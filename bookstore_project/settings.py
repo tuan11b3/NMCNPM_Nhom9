@@ -29,8 +29,8 @@ DEBUG = True
 # DEBUG = int(os.environ.get('DEBUG', default=0))
 # DEBUG = False
 
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['localhost', 'tuan11b3.pythonanywhere.com']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'tuan11b3.pythonanywhere.com']
 
 
 # Application definition
