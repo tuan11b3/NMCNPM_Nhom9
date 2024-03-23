@@ -18,6 +18,7 @@ coreapi = "*"
 pyyaml = "*"
 inflection = "*"
 django-rest-swagger = "*"
+whitenoise = "*"
 
 [dev-packages]
 

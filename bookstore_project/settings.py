@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic', # new!
     'django.contrib.staticfiles',
     'django.contrib.sites', # Enabling the sites framwork for django_allauth
 
@@ -69,6 +70,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # new!
     'corsheaders.middleware.CorsMiddleware', # new
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -113,8 +115,8 @@ DATABASES = {
         'NAME': 'books1',
         'USER': 'root',
         'PASSWORD': '30102001',
-        # 'HOST':'db',
-        'HOST' : 'localhost',
+        'HOST':'db',
+        # 'HOST' : 'localhost',
         'PORT':'3306',
     }
 }
@@ -158,6 +160,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),] #new
 # STATIC_ROOT help web run faster
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new
+# White noise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # set STATICFILES_FINDERS ---> tell Django how to look static file dir
 STATICFILES_FINDERS = [
